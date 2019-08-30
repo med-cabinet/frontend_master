@@ -6,10 +6,11 @@ import './MandatoryForm.css';
 import { useContext } from 'react';
 import { LoginContext } from '../contexts/LoginContext.js';
 
-const MandatoryForm = () => {
+const MandatoryForm = (props) => {
 
     const { userD, setUserD } = useContext(LoginContext);
     const { answers, setAnswers } = useContext(LoginContext);
+    const { strainRec, setStrainRec } = useContext(LoginContext);
 
     const handleChange = e => {
         setAnswers({
@@ -25,13 +26,16 @@ const MandatoryForm = () => {
         axiosWithAuth()
             .patch(`https://med-cabinet-temp.herokuapp.com/api/users/${userD.id}`, answers)
             .then(res => {
-                console.log(res);
-                window.location='/dashboard';
+                console.log(res.data);
+                setStrainRec(res.data.recommendations);
+                props.history.push('/dashboard');
             })
             .catch(err => {
                 console.log('Error while logging in', err.response)
             });
     };
+
+    console.log('2', strainRec);
 
     return (
         <div className="user-questioner">

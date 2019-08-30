@@ -2,12 +2,11 @@ import React from 'react';
 
 const Recs = (props) => {
 
+    // console.log(props.userData)
+
     return (
         <div>
-            <h3>Recommendations *Testing*</h3>
-            {props.userData.map(datas => (
-                <div>{datas.username}</div>
-            ))}
+            <p>{props.strainData.name}</p>
         </div>
     );
 };
