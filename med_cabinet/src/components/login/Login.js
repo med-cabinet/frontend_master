@@ -31,6 +31,7 @@ const Login = (props) => {
                 setStrainRec(res.data.recommendations);
                 setStrainSaved(res.data.savedStrains);
                 console.log("res", res)
+                res.data.user.goal ? props.history.push('/dashboard') : props.history.push('/mandatory')
             })
             .catch(err => {
                 console.log('Error while logging in', err.response)
