@@ -28,7 +28,7 @@ const MandatoryForm = (props) => {
             .then(res => {
                 console.log(res.data);
                 setStrainRec(res.data.recommendations);
-                props.history.push('/dashboard'); //
+                props.history.push('/dashboard');
             })
             .catch(err => {
                 console.log('Error while logging in', err.response)
