@@ -20,110 +20,105 @@ import "./HistoricalDataCard.css";
 
 const useStyles = makeStyles(theme => ({
 	card: {
-	  minWidth: 275,
-	  padding: '10px',
-	  marginBottom: '15px',
-	  marginRight: '15px',
+		minWidth: 275,
+		maxWidth: 300,
+		padding: '10px',
+		marginBottom: '15px',
+		marginRight: '15px',
 	},
 	review: {
-	  fontSize: 13,
-	  color: 'black',
+		fontSize: 13,
+		color: 'black',
+	},
+	media: {
+		height: 140,
 	},
 	title: {
-	  fontSize: 20,
+		fontSize: 20,
 	},
 	pos: {
-	  fontSize: 13,
-	  marginBottom: 12,
+		fontSize: 13,
+		marginBottom: 12,
 	},
 	button: {
-	  fontSize: 13,
-	  paddingTop: 2
+		fontSize: 13,
+		paddingTop: 2,
+	},
+	flavor: {
+		color: '#574841',
+	},
+	desc: {
+		fontSize: 13,
+		width: '80%',
+		margin: 'auto',
+		marginBottom: '15px',
 	},
 	expand: {
 		transform: 'rotate(0deg)',
 		marginLeft: 'auto',
 		transition: theme.transitions.create('transform', {
-		  duration: theme.transitions.duration.shortest,
+			duration: theme.transitions.duration.shortest,
 		}),
-	  },
-	  expandOpen: {
-		transform: 'rotate(360deg)',
-	  },
+		},
+		expandOpen: {
+			transform: 'rotate(360deg)',
+		},
 })); 
 
 const HistoryCard = (props) => {
 
 	const classes = useStyles();
-	// const [expanded, setExpanded] = React.useState(false);
+	const [expanded, setExpanded] = React.useState(false);
 	const { userD, setUserD } = useContext(LoginContext);
 	const { strainSaved, setStrainSaved } = useContext(LoginContext);
 
-	// function handleExpandClick() {
-	// 	setExpanded(!expanded);
-	//   }
+	function handleExpandClick() {
+		setExpanded(!expanded);
+	  }
 
 	return (
 		<Card className={classes.card}>
-			<CardContent>
-				<Typography className={classes.title} variant="h5" component="h2">
-					<img src="https://darkheartnursery.com/wp-content/uploads/2014/07/lf_blue_dream-708x900.jpg"
-						 alt="strain image" 
-					/>
-				</Typography>
-				<Typography className={classes.title} variant="h5" component="h2">
-					{/* {props.history.name} */}
-					{props.savedData.name}
-				</Typography>
-				<Typography className={classes.pos} color="textSecondary">
-					<em>{props.savedData.type}</em>
-				</Typography>
-				<Typography className={classes.review} variant="body2" component="p">
-					**insert Review component here**
-				</Typography>
-			</CardContent>
-			{/* <CardActions>
-				<Button className={clsx(classes.expand, classes.button, {[classes.expandOpen]: expanded})}
-				  onClick={handleExpandClick}
-				  aria-expanded={expanded}				
-				size="small">View Strain</Button>
-			</CardActions> */}
+			<CardActionArea>
+				<CardMedia
+					className={classes.media}
+					image={props.savedData.imgUrl}
+					title={props.savedData.name}
+				/>
+				<CardContent>
+					<Typography className={classes.title} variant="h5" component="h2">
+						{props.savedData.name}
+					</Typography>
+					<Typography className={classes.pos} color="textSecondary">
+						<em>{props.savedData.type}</em>
+					</Typography>
+					<Typography className={classes.review} variant="body2" component="p">
+						<p className={classes.flavor}>
+							<strong>flavors: </strong>{props.savedData.flavors}
+						</p>
+						<p className={classes.flavor}>
+							<strong>parents: </strong>{props.savedData.parents}
+						</p>
+						<p className={classes.flavor}>
+							<strong>rating: </strong>{props.savedData.rating}/5
+						</p>
+					</Typography>
+				</CardContent>
+			</CardActionArea>
 
-			{/* <Collapse in={expanded} timeout="auto" unmountOnExit>
-			//	<p>hello</p>
-			</Collapse> */}
+			<CardActions>
+				<Button className={clsx(classes.expand, classes.button, {[classes.expandOpen]: expanded})}
+						onClick={handleExpandClick}
+						aria-expanded={expanded}				
+						size="small">View Description
+				</Button>
+			</CardActions>
+
+			<Collapse in={expanded} timeout="auto" unmountOnExit>
+				<h5 className={classes.desc}>{props.savedData.description}</h5>
+			</Collapse>
 
 		</Card>
 	);
 }
 
 export default HistoryCard;
-
-// const HistoryCard = (props) => {
-// 	return (
-// 		<div className='history-card'>
-// 			<h5>{props.history.name}</h5>
-// 			{/* <img src={props.history.imgUrl} /> */}
-// 			<p><em>{props.history.race}</em></p>
-
-// 			{/* insert Review component info here */}
-
-// 			<button>View Strain</button>
-// 		</div>
-// 	)
-// }
-
-// export default HistoryCard;
-
-// {
-// 	id: id,
-// 	imgUrl: string,
-// 	name: string,
-// 	description: string,
-// 	type: string
-//  }
-
-// {props.history.imgUrl}
-// {props.history.name}
-// {props.history.description}
-// {props.history.type}

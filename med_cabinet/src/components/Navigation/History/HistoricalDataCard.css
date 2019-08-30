@@ -1,3 +1,17 @@
 .MuiButton-sizeSmall {
     width: 100%;
 }
+
+.MuiCardActionArea-root, .MuiCardContent-root:hover {
+    background-color: white;
+    color: black;
+}
+
+.MuiButton-label:hover {
+    background-color: #574841; 
+}
+
+button.MuiButtonBase-root.MuiCardActionArea-root:hover {
+    background-color: white;
+    color: black;
+}

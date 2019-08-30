@@ -1,16 +1,13 @@
-import React from 'react'
+import React from 'react';
+import './Dashboard.css';
+
 // import { Grid, Image, Menu } from 'semantic-ui-react'
 // import DashGrid from './DashGrid'
 // import DashVertMenu from './DashVertMenu'
-import './Dashboard.css'
-
 // import DashGrid from './DashGrid'
-
-// import axiosWithAuth from '../../../utils/axiosWithAuth.js';
-
 // import DashBoardCards from './DashBoardCards';
 
-// import Context API 
+// Import Context API 
 import { useContext } from 'react';
 import { LoginContext } from '../../../contexts/LoginContext.js';
 import AdviceCard from '../../AdviceCard';
@@ -18,21 +15,18 @@ import AdviceCard from '../../AdviceCard';
 const Dashboards = () => {
 
    const { strainRec, setStrainRec } = useContext(LoginContext);
-//    const { userD, setUserD } = useContext(LoginContext);
-   console.log('3', strainRec);
 
    return (
-    <div>
-
-        {strainRec.map(recs => (
-            <AdviceCard key={recs.id} strainData={recs} />
-        ))}
-        
-        {/* <DashGrid/> */}
-        {/* <DashBoardCards/> */}
-        {/* <DashGrid/> */}
-    </div>
-   )
-}
+        <div>
+            {strainRec.map(recs => (
+                <AdviceCard key={recs.id} strainData={recs} />
+            ))}
+            
+            {/* <DashGrid/> */}
+            {/* <DashBoardCards/> */}
+            {/* <DashGrid/> */}
+        </div>
+   );
+};
 
 export default Dashboards;
