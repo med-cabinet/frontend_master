@@ -19,8 +19,6 @@ import CardData from './CardData'
 
 
 
-
-
 console.log(CardData)
 const useStyles = makeStyles(theme => ({
   card: {

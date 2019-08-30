@@ -11,7 +11,7 @@ const History = () => {
 
 	// Saved Strain Data
 	const { strainSaved } = useContext(LoginContext);
-	console.log(strainSaved);
+	console.log('strain saved', strainSaved);
 
 	return (
 		<div className='history-list'>

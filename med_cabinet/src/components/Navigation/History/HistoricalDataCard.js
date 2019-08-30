@@ -67,7 +67,7 @@ const HistoryCard = (props) => {
 		<Card className={classes.card}>
 			<CardContent>
 				<Typography className={classes.title} variant="h5" component="h2">
-					<img src="https://darkheartnursery.com/wp-content/uploads/2014/07/lf_blue_dream-708x900.jpg"
+					<img src={props.savedData.imgUrl}
 						 alt="strain image" 
 					/>
 				</Typography>
@@ -79,7 +79,7 @@ const HistoryCard = (props) => {
 					<em>{props.savedData.type}</em>
 				</Typography>
 				<Typography className={classes.review} variant="body2" component="p">
-					**insert Review component here**
+					{props.savedData.description}
 				</Typography>
 			</CardContent>
 			{/* <CardActions>
