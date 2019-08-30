@@ -18,13 +18,14 @@ import AdviceCard from '../../AdviceCard';
 const Dashboards = () => {
 
    const { strainRec, setStrainRec } = useContext(LoginContext);
+//    const { userD, setUserD } = useContext(LoginContext);
    console.log('3', strainRec);
 
    return (
     <div>
 
         {strainRec.map(recs => (
-            <AdviceCard strainData={recs} />
+            <AdviceCard id={recs.id} strainData={recs} />
         ))}
         
         {/* <DashGrid/> */}

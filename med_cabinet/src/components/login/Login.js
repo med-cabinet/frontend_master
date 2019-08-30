@@ -10,9 +10,10 @@ const Login = (props) => {
 
     const { creds, setCreds } = useContext(LoginContext);
     const { userD, setUserD } = useContext(LoginContext);
-    const { reviews, setReviews } = useContext(LoginContext);
-    const { strainsReviewed, setStrainsReviewed } = useContext(LoginContext);
+    // const { reviews, setReviews } = useContext(LoginContext);
+    // const { strainsReviewed, setStrainsReviewed } = useContext(LoginContext);
     const { strainRec, setStrainRec } = useContext(LoginContext);
+    const { strainSaved, setStrainSaved } = useContext(LoginContext);
 
     const handleChange = e => {
         setCreds({
@@ -29,9 +30,10 @@ const Login = (props) => {
                 localStorage.setItem('token', res.data.token)
                 console.log('user data', res.data.user);
                 setUserD(res.data.user);
-                setReviews(res.data.reviews);
-                setStrainsReviewed(res.data.reviewedStrains);
+                // setReviews(res.data.reviews);
+                // setStrainsReviewed(res.data.reviewedStrains);
                 setStrainRec(res.data.recommendations);
+                setStrainSaved(res.data.savedStrains);
                 console.log("res", res)
                 props.history.push('/mandatory')
             })
@@ -39,8 +41,6 @@ const Login = (props) => {
                 console.log('Error while logging in', err.response)
             });
     };
-
-    console.log('1', strainRec);
 
     return (
         <div className="loginForm">
