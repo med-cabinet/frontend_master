@@ -8,7 +8,7 @@ import StrainCards from './components/StrainCards';
 import Footer from './components/Footer/Footer.js';
 import MedCabinetLogo from './images/MedCabinetLogo.png';
 import NavTab from './components/Navigation/NavTab';
-// import Strains from './components/Navigation/Strains';
+import StrainLibrary from './components/StrainLibrary';
 // import ContactUs from './components/Navigation';
 import HistoricalData from './components/Navigation/History/HistoricalData.js';
 import { Route, Switch } from 'react-router-dom'
@@ -63,7 +63,7 @@ const App = () => {
               <PrivateRoute exact path='/dashboard' component={Dashboard} />
               <PrivateRoute exact path='/history' component={HistoricalData} />
               <PrivateRoute exact path='/mandatory' component={MandatoryForm} />
-              {/* <Route exact path= '/strains' component= {Strains}/> */}
+              <PrivateRoute exact path= '/strains' component= {StrainLibrary}/>
               {/* <Route exact path= '/learnmore' component= {learnMore}/>  */}
               {/* <Route exact path= '/contact' component= {ContactUs} />  */}
             </Switch>

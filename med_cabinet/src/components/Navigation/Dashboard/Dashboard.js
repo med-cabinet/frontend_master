@@ -24,7 +24,7 @@ const Dashboards = () => {
     <div>
 
         {strainRec.map(recs => (
-            <AdviceCard strainData={recs} />
+            <AdviceCard key={recs.id} strainData={recs} />
         ))}
         
         {/* <DashGrid/> */}

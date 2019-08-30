@@ -27,14 +27,14 @@ function StrainCard(props) {
 	      <CardMedia
 		className={classes.media}
 		image="https://darkheartnursery.com/wp-content/uploads/2014/07/lf_blue_dream-708x900.jpg"
-		title="Blue Dream Strain"
+		title="Strain"
 	      />
 	      <CardContent>
 		<Typography gutterBottom variant="h5" component="h2">
 		  { props.strain.name }
 		</Typography>
 		<Typography variant="body2" color="textSecondary" component="p">
-		  { props.strain.race }
+		  { props.strain.type }
 		</Typography>
 	      </CardContent>
 	    </CardActionArea>

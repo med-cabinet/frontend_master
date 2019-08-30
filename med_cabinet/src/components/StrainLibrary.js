@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axiosWithAuth from '../utils/axiosWithAuth.js';
 
 // import { Link } from 'react-router-dom';
 
@@ -11,8 +11,8 @@ class StrainLibrary extends React.Component {
 	};
 
 	componentDidMount() {
-		axios
-			.get('http://strainapi.evanbusse.com/dqEbrK0/strains/search/name/Candy')
+		axiosWithAuth()
+			.get('https://med-cabinet-temp.herokuapp.com/api/strains')
 			.then(res => {
 				console.log('Strain Data', res.data)
 				this.setState({strain: res.data})
