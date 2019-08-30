@@ -20,26 +20,46 @@ const useStyles = makeStyles({
       
 function AdviceCard(props) {
 	const classes = useStyles();
-      
+	
 	return (
-	  <Card className={classes.card}>
-	    <CardActionArea>
-	      <CardMedia
-		className={classes.media}
-		image="https://darkheartnursery.com/wp-content/uploads/2014/07/lf_blue_dream-708x900.jpg"
-		title="Blue Dream Strain"
-	      />
-	      <CardContent>
-		<Typography gutterBottom variant="h5" component="h2">
-		  { props.advice.name }
-		</Typography>
-		<Typography variant="body2" color="textSecondary" component="p">
-		  { props.advice.race }
-		</Typography>
-	      </CardContent>
-	    </CardActionArea>
-	  </Card>
-	);
+		<Card className={classes.card}>
+		  <CardActionArea>
+			<CardMedia
+		  className={classes.media}
+		  image="https://darkheartnursery.com/wp-content/uploads/2014/07/lf_blue_dream-708x900.jpg"
+		  title={props.strainData.name}
+			/>
+			<CardContent>
+		  <Typography gutterBottom variant="h5" component="h2">
+			{props.strainData.name}
+		  </Typography>
+		  <Typography variant="body2" color="textSecondary" component="p">
+			{props.strainData.type}
+		  </Typography>
+			</CardContent>
+		  </CardActionArea>
+		</Card>
+	  );
+
+	// return (
+	//   <Card className={classes.card}>
+	//     <CardActionArea>
+	//       <CardMedia
+	// 	className={classes.media}
+	// 	image="https://darkheartnursery.com/wp-content/uploads/2014/07/lf_blue_dream-708x900.jpg"
+	// 	title="Blue Dream Strain"
+	//       />
+	//       <CardContent>
+	// 	<Typography gutterBottom variant="h5" component="h2">
+	// 	  { props.advice.name }
+	// 	</Typography>
+	// 	<Typography variant="body2" color="textSecondary" component="p">
+	// 	  { props.advice.race }
+	// 	</Typography>
+	//       </CardContent>
+	//     </CardActionArea>
+	//   </Card>
+	// );
 }
 
 export default AdviceCard;

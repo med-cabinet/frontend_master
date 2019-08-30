@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 // import { Grid, Image, Menu } from 'semantic-ui-react'
 // import DashGrid from './DashGrid'
 // import DashVertMenu from './DashVertMenu'
 import './Dashboard.css'
 
-import DashGrid from './DashGrid'
+// import DashGrid from './DashGrid'
 
-import axiosWithAuth from '../../../utils/axiosWithAuth.js';
+// import axiosWithAuth from '../../../utils/axiosWithAuth.js';
 
-import DashBoardCards from './DashBoardCards';
-import Recs from '../Recs/Recs.js';
+// import DashBoardCards from './DashBoardCards';
 
 // import Context API 
 import { useContext } from 'react';
 import { LoginContext } from '../../../contexts/LoginContext.js';
+import AdviceCard from '../../AdviceCard';
 
 const Dashboards = () => {
 
@@ -24,7 +24,7 @@ const Dashboards = () => {
     <div>
 
         {strainRec.map(recs => (
-            <Recs strainData={recs} />
+            <AdviceCard strainData={recs} />
         ))}
         
         {/* <DashGrid/> */}
