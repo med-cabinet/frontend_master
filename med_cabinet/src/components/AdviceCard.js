@@ -56,7 +56,7 @@ const AdviceCard = (props) => {
 		  <CardActionArea>
 			<CardMedia
 		  		className={classes.media}
-		  		image="https://darkheartnursery.com/wp-content/uploads/2014/07/lf_blue_dream-708x900.jpg"
+		  		image={props.strainData.imgUrl}
 		  		title={props.strainData.name}
 			/>
 			<CardContent>

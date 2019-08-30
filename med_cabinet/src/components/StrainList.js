@@ -12,7 +12,6 @@ function StrainList() {
             console.error('Server Error', error);
           });
       }
-      
       getMovies();
     }, []);
     
