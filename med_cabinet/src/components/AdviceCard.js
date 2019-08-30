@@ -59,15 +59,15 @@ const AdviceCard = (props) => {
 					className={classes.media}
 					image={props.strainData.imgUrl}
 					title={props.strainData.name}
-				/>
-				<CardContent>
-					<Typography gutterBottom variant="h5" component="h2">
-						{props.strainData.name}
-					</Typography>
-					<Typography variant="body2" color="textSecondary" component="p">
-						{props.strainData.type}
-					</Typography>
-				</CardContent>
+			  />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {props.strainData.name}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {props.strainData.type}
+          </Typography>
+        </CardContent>
 			</CardActionArea>
 			<Button	variant="contained" 
 					color="primary" 

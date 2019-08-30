@@ -1,0 +1,4 @@
+[build]
+base = "med_cabinet/"
+publish = "med_cabinet/build/"
+command = "yarn build" 
