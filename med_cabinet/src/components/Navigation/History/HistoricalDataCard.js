@@ -6,8 +6,15 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardMedia from '@material-ui/core/CardMedia';
+
 import Collapse from '@material-ui/core/Collapse';
 import clsx from 'clsx';
+
+// import Context API 
+import { useContext } from 'react';
+import { LoginContext } from '../../../contexts/LoginContext.js';
 
 import "./HistoricalDataCard.css";
 
@@ -19,9 +26,6 @@ const useStyles = makeStyles(theme => ({
 	  marginRight: '15px',
 	},
 	review: {
-	//   display: 'inline-block',
-	//   margin: '0 2px',
-	//   transform: 'scale(0.8)',
 	  fontSize: 13,
 	  color: 'black',
 	},
@@ -51,38 +55,43 @@ const useStyles = makeStyles(theme => ({
 const HistoryCard = (props) => {
 
 	const classes = useStyles();
-	const [expanded, setExpanded] = React.useState(false);
+	// const [expanded, setExpanded] = React.useState(false);
+	const { userD, setUserD } = useContext(LoginContext);
+	const { strainSaved, setStrainSaved } = useContext(LoginContext);
 
-	function handleExpandClick() {
-		setExpanded(!expanded);
-	  }
+	// function handleExpandClick() {
+	// 	setExpanded(!expanded);
+	//   }
 
 	return (
 		<Card className={classes.card}>
 			<CardContent>
 				<Typography className={classes.title} variant="h5" component="h2">
-					** insert db strain img here **
+					<img src="https://darkheartnursery.com/wp-content/uploads/2014/07/lf_blue_dream-708x900.jpg"
+						 alt="strain image" 
+					/>
 				</Typography>
 				<Typography className={classes.title} variant="h5" component="h2">
-					{props.history.name}
+					{/* {props.history.name} */}
+					{props.savedData.name}
 				</Typography>
 				<Typography className={classes.pos} color="textSecondary">
-					<em>{props.history.race}</em>
+					<em>{props.savedData.type}</em>
 				</Typography>
 				<Typography className={classes.review} variant="body2" component="p">
 					**insert Review component here**
 				</Typography>
 			</CardContent>
-			<CardActions>
+			{/* <CardActions>
 				<Button className={clsx(classes.expand, classes.button, {[classes.expandOpen]: expanded})}
 				  onClick={handleExpandClick}
 				  aria-expanded={expanded}				
 				size="small">View Strain</Button>
-			</CardActions>
+			</CardActions> */}
 
-			<Collapse in={expanded} timeout="auto" unmountOnExit>
-				<p>hello</p>
-			</Collapse>
+			{/* <Collapse in={expanded} timeout="auto" unmountOnExit>
+			//	<p>hello</p>
+			</Collapse> */}
 
 		</Card>
 	);

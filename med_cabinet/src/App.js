@@ -30,6 +30,8 @@ const App = () => {
   const [ reviews, setReviews ] = useState([]);
   const [ strainsReviewed, setStrainsReviewed ] = useState([]);
   const [ strainRec, setStrainRec ] = useState([]);
+  const [ strainSaved, setStrainSaved ] = useState([]);
+
   const [ answers, setAnswers ] = useState({
     goal: '',
     pastUser: false,
@@ -44,6 +46,7 @@ const App = () => {
                                     reviews, setReviews,
                                     strainsReviewed, setStrainsReviewed,
                                     strainRec, setStrainRec,
+                                    strainSaved, setStrainSaved,
                                     answers, setAnswers
                                  }}>
       <div className="App">

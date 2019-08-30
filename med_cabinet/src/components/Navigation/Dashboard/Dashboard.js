@@ -18,6 +18,7 @@ import AdviceCard from '../../AdviceCard';
 const Dashboards = () => {
 
    const { strainRec, setStrainRec } = useContext(LoginContext);
+//    const { userD, setUserD } = useContext(LoginContext);
    console.log('3', strainRec);
 
    return (

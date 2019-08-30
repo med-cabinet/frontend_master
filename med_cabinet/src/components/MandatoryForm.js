@@ -28,7 +28,7 @@ const MandatoryForm = (props) => {
             .then(res => {
                 console.log(res.data);
                 setStrainRec(res.data.recommendations);
-                props.history.push('/dashboard');
+                props.history.push('/dashboard'); //
             })
             .catch(err => {
                 console.log('Error while logging in', err.response)
@@ -47,21 +47,21 @@ const MandatoryForm = (props) => {
                         value={answers.goal}
                         onChange={handleChange}
                 >
-                    <option value="Select">Select</option>
-                    <option value="Stress">Stress</option>
-                    <option value="Pain">Pain</option>
-                    <option value="Nausea">Nausea</option>
-                    <option value="Insomnia">Insomnia</option>
-                    <option value="Depression">Depression</option>
-                    <option value="Loss of Appetite">Loss of Appetite</option>
-                    <option value="Muscle Spasms">Muscle Spasms</option>
-                    <option value="Seizures">Seizures</option>
-                    <option value="Fatigue">Fatigue</option>
-                    <option value="Inflammation">Inflammation</option>
-                    <option value="Spasticity">Spasticity</option>
-                    <option value="Eye Pressure">Eye Pressure</option>
-                    <option value="Cramps">Cramps</option>
-                    <option value="Headaches">Headaches</option>
+                    <option value="select">Select</option>
+                    <option value="stress">Stress</option>
+                    <option value="pain">Pain</option>
+                    <option value="nausea">Nausea</option>
+                    <option value="insomnia">Insomnia</option>
+                    <option value="depression">Depression</option>
+                    <option value="lackOfAppetite">Loss of Appetite</option>
+                    <option value="muscleSpasms">Muscle Spasms</option>
+                    <option value="seizures">Seizures</option>
+                    <option value="fatigue">Fatigue</option>
+                    <option value="inflammation">Inflammation</option>
+                    <option value="spasticity">Spasticity</option>
+                    <option value="eyePressure">Eye Pressure</option>
+                    <option value="cramps">Cramps</option>
+                    <option value="headaches">Headaches</option>
                 </select>
 
                 {/* <h4>How would you like cannabis to help you feel?</h4>
