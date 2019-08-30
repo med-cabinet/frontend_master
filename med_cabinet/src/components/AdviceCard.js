@@ -16,9 +16,10 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
 	card: {
-		minWidth: 70,
-		maxWidth: '30%',
-		margin: '2%',
+		margin: '20px',
+		maxWidth: '185px',
+		width: '100%',
+		display: 'inline-grid',
 	},
 	media: {
 		height: 140,
@@ -53,22 +54,22 @@ const AdviceCard = (props) => {
 
 	return (
 		<Card className={classes.card}>
-		  <CardActionArea>
-			<CardMedia
-		  		className={classes.media}
-		  		image={props.strainData.imgUrl}
-		  		title={props.strainData.name}
-			/>
-			<CardContent>
-				<Typography gutterBottom variant="h5" component="h2">
-					{props.strainData.name}
-				</Typography>
-				<Typography variant="body2" color="textSecondary" component="p">
-					{props.strainData.type}
-				</Typography>
-			</CardContent>
-		  </CardActionArea>
-		  <Button   variant="contained" 
+			<CardActionArea>
+				<CardMedia
+					className={classes.media}
+					image={props.strainData.imgUrl}
+					title={props.strainData.name}
+			  />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {props.strainData.name}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {props.strainData.type}
+          </Typography>
+        </CardContent>
+			</CardActionArea>
+			<Button	variant="contained" 
 					color="primary" 
 					className={classes.button}
 					onClick={handleSave}

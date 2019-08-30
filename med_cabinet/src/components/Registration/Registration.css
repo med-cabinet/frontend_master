@@ -116,9 +116,9 @@
     }
 }
 
-.register-button:hover{
-background-color: #574841;
-color: #f0c8b6;
+.register-button:hover {
+    background-color: #574841;
+    color: #f0c8b6;
 }
 
 /* @media(max-width: 500px){

@@ -1,25 +1,27 @@
-// import React from 'react';
-// import ReviewForm from './components/ReviewForm.js';
 import React, { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import MedCabinetLogo from './images/MedCabinetLogo.png';
 import './App.css';
 
-import StrainCards2 from './components/StrainCards2'
-import StrainCards from './components/StrainCards';
 import Footer from './components/Footer/Footer.js';
-import MedCabinetLogo from './images/MedCabinetLogo.png';
 import NavTab from './components/Navigation/NavTab';
 import StrainLibrary from './components/StrainLibrary';
-// import ContactUs from './components/Navigation';
 import HistoricalData from './components/Navigation/History/HistoricalData.js';
-import { Route, Switch } from 'react-router-dom'
-import RegistrationForm from './components/Registration/RegistrationForm'
-import PrivateRoute from './components/PrivateRoute'
+import RegistrationForm from './components/Registration/RegistrationForm';
 import Login from './components/login/Login.js';
-import Dashboard from './components/Navigation/Dashboard/Dashboard'
+import Dashboard from './components/Navigation/Dashboard/Dashboard';
 import MandatoryForm from './components/MandatoryForm.js';
 import StrainDetail from './components/StrainDetail.js';
+import StrainCards2 from './components/StrainCards2';
+import StrainCards from './components/StrainCards';
 
-// import Context Object
+import PrivateRoute from './components/PrivateRoute';
+
+// import ContactUs from './components/Navigation';
+// import ReviewForm from './components/ReviewForm.js';
+
+// Import Context Object
 import { LoginContext } from './contexts/LoginContext.js';
 
 const App = () => {
@@ -56,7 +58,7 @@ const App = () => {
               <NavTab />
             </div>
             <div className='logo-container'>
-              <img src={MedCabinetLogo} />
+              <img src={MedCabinetLogo} alt="med cabinet logo" />
             </div>
           </div>
 
@@ -73,12 +75,10 @@ const App = () => {
               {/* <Route exact path= '/contact' component= {ContactUs} />  */}
             </Switch>
           </div>
-
-          <div>
-            <Footer />
-          </div>
-
         </header>
+
+        <Footer />
+
       </div>
     </LoginContext.Provider>
   );

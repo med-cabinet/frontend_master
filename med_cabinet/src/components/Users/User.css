@@ -3,5 +3,5 @@
 }
 .button:hover {
     background-color: #574841; 
-    color: #f0c8b6;
+    color: hsl(19, 66%, 83%);
 }
