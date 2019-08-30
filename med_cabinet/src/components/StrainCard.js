@@ -16,25 +16,32 @@ const useStyles = makeStyles({
 	media: {
 	  height: 140,
 	},
-      });
+	  });
+
+
       
 function StrainCard(props) {
 	const classes = useStyles();
+
+	const clickHandler = e => {
+		e.preventDefault();
+		// context.history.push('/straindetails')
+	}
       
 	return (
 	  <Card className={classes.card}>
-	    <CardActionArea>
+	    <CardActionArea onClick={clickHandler}>
 	      <CardMedia
 		className={classes.media}
 		image="https://darkheartnursery.com/wp-content/uploads/2014/07/lf_blue_dream-708x900.jpg"
-		title="Blue Dream Strain"
+		title="Strain"
 	      />
 	      <CardContent>
 		<Typography gutterBottom variant="h5" component="h2">
 		  { props.strain.name }
 		</Typography>
 		<Typography variant="body2" color="textSecondary" component="p">
-		  { props.strain.race }
+		  { props.strain.type }
 		</Typography>
 	      </CardContent>
 	    </CardActionArea>
