@@ -15,34 +15,21 @@ import Recs from '../Recs/Recs.js';
 import { useContext } from 'react';
 import { LoginContext } from '../../../contexts/LoginContext.js';
 
-const Dashboards = (props) =>{
-    const [ userData, setUserData ] = useState();
+const Dashboards = () => {
 
-    const { creds, setCreds } = useContext(LoginContext);
-
-
-    // useEffect(() => {
-    //     axiosWithAuth()
-    //         .get('https://med-cabinet-temp.herokuapp.com/api/users')
-    //         .then(res => {
-    //             console.log(res.data)
-    //             setUserData(res.data)
-    //         }) 
-    //         .catch(err => {
-    //             console.log('Error retrieving user data: ', err.response);
-    //         });
-    // }, [])
+   const { strainRec, setStrainRec } = useContext(LoginContext);
+   console.log('3', strainRec);
 
    return (
     <div>
 
+        {strainRec.map(recs => (
+            <Recs strainData={recs} />
+        ))}
         
-        <DashGrid/>
-
+        {/* <DashGrid/> */}
         {/* <DashBoardCards/> */}
         {/* <DashGrid/> */}
-        {/* <Recs userData={userData} /> */}
-
     </div>
    )
 }

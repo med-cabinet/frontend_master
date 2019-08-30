@@ -20,7 +20,6 @@ import MandatoryForm from './components/MandatoryForm.js';
 
 // import Context Object
 import { LoginContext } from './contexts/LoginContext.js';
-// import { RegisterContext } from './contexts/RegisterContext.js';
 
 const App = () => {
 
@@ -29,6 +28,7 @@ const App = () => {
   const [ userD, setUserD ] = useState({});
   const [ reviews, setReviews ] = useState([]);
   const [ strainsReviewed, setStrainsReviewed ] = useState([]);
+  const [ strainRec, setStrainRec ] = useState(['1', '2', '3']);
   const [ answers, setAnswers ] = useState({
     goal: '',
     pastUser: false,
@@ -36,49 +36,45 @@ const App = () => {
     intakeTime: ''
   });
 
-  // Register Context Data
-  // const [ userID, setUserID ] = useState({ userID: ''}) 
-
   return (
 
     <LoginContext.Provider value={{ creds, setCreds,
                                     userD, setUserD,
                                     reviews, setReviews,
                                     strainsReviewed, setStrainsReviewed,
+                                    strainRec, setStrainRec,
                                     answers, setAnswers
                                  }}>
-      {/* <RegisterContext.Provider value={{ userID, setUserID }}>                            */}
-        <div className="App">
-          <header className="App-header">
-            <div className='navigation'>
-              <div>
-                <NavTab />
-              </div>
-              <div className='logo-container'>
-                <img src={MedCabinetLogo} />
-              </div>
-            </div>
-
+      <div className="App">
+        <header className="App-header">
+          <div className='navigation'>
             <div>
-              <Switch>
-                <Route path='/register' component={RegistrationForm} />
-                <Route path='/login' component={Login} />
-                <PrivateRoute exact path='/dashboard' component={Dashboard} />
-                <PrivateRoute exact path='/history' component={HistoricalData} />
-                <PrivateRoute exact path='/mandatory' component={MandatoryForm} />
-                {/* <Route exact path= '/strains' component= {Strains}/> */}
-                {/* <Route exact path= '/learnmore' component= {learnMore}/>  */}
-                {/* <Route exact path= '/contact' component= {ContactUs} />  */}
-              </Switch>
+              <NavTab />
             </div>
-
-            <div>
-              <Footer />
+            <div className='logo-container'>
+              <img src={MedCabinetLogo} />
             </div>
+          </div>
 
-          </header>
-        </div>
-      {/* </RegisterContext.Provider>   */}
+          <div>
+            <Switch>
+              <Route path='/register' component={RegistrationForm} />
+              <Route path='/login' component={Login} />
+              <PrivateRoute exact path='/dashboard' component={Dashboard} />
+              <PrivateRoute exact path='/history' component={HistoricalData} />
+              <PrivateRoute exact path='/mandatory' component={MandatoryForm} />
+              {/* <Route exact path= '/strains' component= {Strains}/> */}
+              {/* <Route exact path= '/learnmore' component= {learnMore}/>  */}
+              {/* <Route exact path= '/contact' component= {ContactUs} />  */}
+            </Switch>
+          </div>
+
+          <div>
+            <Footer />
+          </div>
+
+        </header>
+      </div>
     </LoginContext.Provider>
   );
 }
