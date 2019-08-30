@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6867a04c.chunk.css",
+    "main.js": "/static/js/main.238a345e.chunk.js",
+    "main.js.map": "/static/js/main.238a345e.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.968bd77c.js",
+    "runtime~main.js.map": "/static/js/runtime~main.968bd77c.js.map",
+    "static/js/2.1a1d422d.chunk.js": "/static/js/2.1a1d422d.chunk.js",
+    "static/js/2.1a1d422d.chunk.js.map": "/static/js/2.1a1d422d.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a8f793fe9a379856495d6e0096027aa7.js": "/precache-manifest.a8f793fe9a379856495d6e0096027aa7.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.6867a04c.chunk.css.map": "/static/css/main.6867a04c.chunk.css.map",
+    "static/media/MedCabinetLogo.png": "/static/media/MedCabinetLogo.021c5350.png"
+  }
+}
