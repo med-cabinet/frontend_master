@@ -66,7 +66,13 @@ function RegistrationForm ({ errors, touched }) {
                     <p className='error'>{errors.username}</p>
                 )}
 
-
+                <p>Enter a valid zip code</p>
+                <Field 
+                    className = 'zip'
+                    name= 'zip'
+                    type = 'number'
+                    placeholder= 'Zip Code'
+                />
 
                 {touched.username && errors.username && (
                     <p style={{color: 'orange'}} className = 'error'>{errors.username}</p>
