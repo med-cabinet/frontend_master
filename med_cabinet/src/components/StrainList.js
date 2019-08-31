@@ -1,4 +1,4 @@
-function StrainList() {
+function GetStrains () {
     const [strains, setStrains] = useState([])
     
     useEffect(() => {
@@ -10,7 +10,7 @@ function StrainList() {
           })
           .catch(error => {
             console.error('Server Error', error);
-          });
+           });
       }
       getMovies();
     }, []);
